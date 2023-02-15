@@ -1,0 +1,18 @@
+class Solution{
+    public:
+    int firstElementKTime(int a[], int n, int k)
+    {
+    int c=0;int b=0;
+    int hashh[100000]={0};
+       for(int i=0;i<n;i++){
+          hashh[a[i]]++;
+          if(hashh[a[i]]>=k)
+          {c=a[i];
+          b=1;
+       break;}}
+       if(b==0)
+       return -1;
+       else
+       return c;
+    }
+};
