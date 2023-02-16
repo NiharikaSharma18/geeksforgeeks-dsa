@@ -1,0 +1,26 @@
+class Solution{
+    public:
+
+    //Function to check if two arrays are equal or not.
+    bool check(vector<ll> A, vector<ll> B, int N) {
+        //code here
+        map<int,int> m1,m2;
+        if(A.size()!=B.size())
+        return 0;
+        for(int i=0;i<A.size();i++){
+            m1[A[i]]++;
+             m2[B[i]]++;
+        }
+         for (auto i = m1.begin(),j=m2.begin(); i != m1.end(); i++,j++){
+          if(i->first!=j->first)
+ 
+          return 0;
+          else{
+              if(i->second!=j->second)
+              return 0;
+          }
+            
+        }
+        return 1;
+    }
+};
