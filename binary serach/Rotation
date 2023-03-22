@@ -1,0 +1,26 @@
+class Solution{
+public:	
+	int findKRotation(int arr[], int n) {
+	    if(n==1)
+	    return 0 ;
+	        int s=0,end=n-1;
+	        while(s<=end){ 
+	        int mid=(s+end)/2;
+	        int next=(mid+1)%n;
+	        int prev=(mid+n-1)%n;
+	        if(arr[mid]<=arr[prev]  && arr[mid]<=arr[next] ){
+	            return mid;
+	            
+	        }
+	       else if(arr[end]<arr[mid])
+                s = mid+1;
+            else 
+                end= mid-1;
+	        
+	    }
+	    return 0;
+	}
+
+};
+time complexity:0(log n)
+space complexity:0(1)
