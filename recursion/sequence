@@ -1,0 +1,29 @@
+class Solution{
+public:
+    long long sequence(int N) {
+        if (N == 0) {
+            return 0;
+        }
+        
+        long long sum = 0;
+        int d = 0;
+        sequenceUtil(N, 1, sum, d);
+        
+        return sum;
+    }
+    
+    void sequenceUtil(int N, int i, long long& sum, int& d) {
+        if (i > N) {
+            return;
+        }
+        
+        long long p = 1;
+        for (int j = 1; j <= i; j++) {
+            p *= (d + j);
+        }
+        
+        sum += p;
+        d += i;
+        sequenceUtil(N, i + 1, sum, d);
+    }
+};
