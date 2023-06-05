@@ -1,0 +1,17 @@
+class Solution{
+public:
+   void js(int N, vector<int>& p) {
+      p.push_back(N);
+        if (N == 1)
+            return;
+        if (N % 2 == 0)
+            js(sqrt(N), p);
+        else
+           js(sqrt(N) * sqrt(N) * sqrt(N), p);
+    }
+    vector<int> jugglerSequence(int N) {
+        vector<int> p;
+        js(N, p);
+        return p;
+    }
+};
